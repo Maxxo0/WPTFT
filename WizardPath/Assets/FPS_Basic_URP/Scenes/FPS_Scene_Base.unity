@@ -919,7 +919,7 @@ PrefabInstance:
     - target: {fileID: 1930219256152514339, guid: 59206ecfbb8b69143b490e0293bf87cf,
         type: 3}
       propertyPath: enemyLayer.m_Bits
-      value: 128
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2573197434915217943, guid: 59206ecfbb8b69143b490e0293bf87cf,
         type: 3}
@@ -930,6 +930,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5104664621278477449, guid: 59206ecfbb8b69143b490e0293bf87cf,
+        type: 3}
+      propertyPath: groundLayer.m_Bits
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5638658015603135568, guid: 59206ecfbb8b69143b490e0293bf87cf,
         type: 3}
