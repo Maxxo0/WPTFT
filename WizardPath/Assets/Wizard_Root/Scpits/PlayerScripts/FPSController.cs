@@ -128,7 +128,7 @@ public class FPSController : MonoBehaviour
     {
         
         isCrouching = context.ReadValueAsButton();
-        //anim.SetBool("isCrouching", isCrouching);
+        anim.SetBool("isCrouching", isCrouching);
 
     }
 }

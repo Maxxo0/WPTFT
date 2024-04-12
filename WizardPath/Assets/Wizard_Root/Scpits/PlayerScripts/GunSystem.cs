@@ -89,7 +89,8 @@ public class GunSystem : MonoBehaviour
 
             if (hit.collider.CompareTag("Enemy"))
             {
-                Debug.Log("This hitable object is an enemy");
+                EnemyDamage enemyScript = hit.collider.GetComponent<EnemyDamage>();
+                enemyScript.TakeDamage(damage);
             }
 
             bullletsLeft--;
