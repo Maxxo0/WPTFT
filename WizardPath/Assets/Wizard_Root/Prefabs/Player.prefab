@@ -492,19 +492,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1142583edbfa0bb4b967f128a63222ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  camHolder: {fileID: 0}
+  camHolder: {fileID: 7618402073325129465}
   speed: 0
   sprintSpeed: 0
   crouchSpeed: 0
   maxForce: 0
   sensitivity: 0
   jumpForce: 0
-  groundCheck: {fileID: 0}
+  groundCheck: {fileID: 6754847657710366691}
   isGrounded: 0
   groundDetectRadius: 0.1
   groundLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
 --- !u!114 &3392766793256972105
 MonoBehaviour:
   m_ObjectHideFlags: 0
