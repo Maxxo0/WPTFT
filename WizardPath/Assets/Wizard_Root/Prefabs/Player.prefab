@@ -213,8 +213,6 @@ GameObject:
   - component: {fileID: 6906299676104051796}
   - component: {fileID: 8028036900133656388}
   - component: {fileID: 1710589944268639177}
-  - component: {fileID: 5888636077129110798}
-  - component: {fileID: 3392766793256972105}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -237,7 +235,7 @@ Transform:
   - {fileID: 2343967087676267982}
   - {fileID: 5275576186508253944}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &5637725636619070707
 MeshFilter:
@@ -325,7 +323,7 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5888636077129110798}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: FPSController, Assembly-CSharp
         m_MethodName: OnMove
         m_Mode: 0
@@ -341,7 +339,7 @@ MonoBehaviour:
     m_ActionName: Player/Move
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5888636077129110798}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: FPSController, Assembly-CSharp
         m_MethodName: OnLook
         m_Mode: 0
@@ -357,7 +355,7 @@ MonoBehaviour:
     m_ActionName: Player/Look
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3392766793256972105}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GunSystem, Assembly-CSharp
         m_MethodName: OnShoot
         m_Mode: 0
@@ -373,7 +371,7 @@ MonoBehaviour:
     m_ActionName: Player/Shoot
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3392766793256972105}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GunSystem, Assembly-CSharp
         m_MethodName: OnReload
         m_Mode: 0
@@ -389,7 +387,7 @@ MonoBehaviour:
     m_ActionName: Player/Reload
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5888636077129110798}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: FPSController, Assembly-CSharp
         m_MethodName: OnJump
         m_Mode: 0
@@ -405,7 +403,7 @@ MonoBehaviour:
     m_ActionName: Player/Jump
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5888636077129110798}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: FPSController, Assembly-CSharp
         m_MethodName: OnSprint
         m_Mode: 0
@@ -421,7 +419,7 @@ MonoBehaviour:
     m_ActionName: Player/Sprint
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5888636077129110798}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: FPSController, Assembly-CSharp
         m_MethodName: OnCrouch
         m_Mode: 0
@@ -480,61 +478,3 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &5888636077129110798
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7618402073325129465}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1142583edbfa0bb4b967f128a63222ef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  camHolder: {fileID: 7618402073325129465}
-  speed: 0
-  sprintSpeed: 0
-  crouchSpeed: 0
-  maxForce: 0
-  sensitivity: 0
-  jumpForce: 0
-  groundCheck: {fileID: 6754847657710366691}
-  isGrounded: 0
-  groundDetectRadius: 0.1
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 64
---- !u!114 &3392766793256972105
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7618402073325129465}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 814060f063f40664ba3817f93f166760, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fpsCam: {fileID: 0}
-  shootPoint: {fileID: 0}
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  damage: 0
-  range: 0
-  spread: 0
-  shootingCooldown: 0
-  timeBetweenShoots: 0
-  reloadTime: 0
-  allowButtonHold: 0
-  ammoSize: 0
-  BulletsPerTap: 0
-  bullletsLeft: 0
-  bullletsShot: 0
-  shooting: 0
-  canShoot: 0
-  reloading: 0
-  muzzleFlash: {fileID: 0}
-  hitGraphic: {fileID: 0}
