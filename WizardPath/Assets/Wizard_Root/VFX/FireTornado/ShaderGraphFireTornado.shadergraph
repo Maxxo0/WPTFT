@@ -177,20 +177,6 @@
         {
             "m_OutputSlot": {
                 "m_Node": {
-                    "m_Id": "2d68a36974b74723aeca86cd96e09a34"
-                },
-                "m_SlotId": 2
-            },
-            "m_InputSlot": {
-                "m_Node": {
-                    "m_Id": "ff675be5ee75439992bdf1ae0c8a8600"
-                },
-                "m_SlotId": 0
-            }
-        },
-        {
-            "m_OutputSlot": {
-                "m_Node": {
                     "m_Id": "301ddaba09e643d89034f29da9df09b1"
                 },
                 "m_SlotId": 0
@@ -326,6 +312,20 @@
                     "m_Id": "2d68a36974b74723aeca86cd96e09a34"
                 },
                 "m_SlotId": 1
+            }
+        },
+        {
+            "m_OutputSlot": {
+                "m_Node": {
+                    "m_Id": "8e2fe61009d14c859e56bbe69b5db300"
+                },
+                "m_SlotId": 2
+            },
+            "m_InputSlot": {
+                "m_Node": {
+                    "m_Id": "ff675be5ee75439992bdf1ae0c8a8600"
+                },
+                "m_SlotId": 0
             }
         },
         {
@@ -771,10 +771,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -2.0000035762786867,
-            "y": 217.00001525878907,
-            "width": 207.99998474121095,
-            "height": 302.0
+            "x": 41.00000762939453,
+            "y": 161.00001525878907,
+            "width": 208.0,
+            "height": 302.00006103515627
         }
     },
     "m_Slots": [
@@ -888,7 +888,7 @@
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
-    "m_Value": 1.0,
+    "m_Value": 5.0,
     "m_FloatType": 0,
     "m_RangeValues": {
         "x": 0.0,
@@ -2648,8 +2648,8 @@
         "m_Expanded": false,
         "m_Position": {
             "serializedVersion": "2",
-            "x": 630.0,
-            "y": 389.0,
+            "x": 648.0,
+            "y": 383.0,
             "width": 128.0,
             "height": 94.0
         }
