@@ -72,7 +72,7 @@ public class ShootSystem : MonoBehaviour
     }
     void ShootSyst()
     {
-        switch (GameManager.Instance.actualElement) 
+        switch (GameManager.Instance.actualElement)
         {
 
             case GameManager.ElementStatus.fire:
