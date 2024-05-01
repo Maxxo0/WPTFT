@@ -74,13 +74,14 @@ public class ShootSystem : MonoBehaviour
         {
             ShootSyst();
         }
+        
     }
     void ShootSyst()
     {
 
-        switch (GameManager.Instance.actualElement)
+        switch(GameManager.Instance.actualElement)
         {
-
+                
             case GameManager.ElementStatus.fire:
                 if (canShoot)
                 {
@@ -125,10 +126,7 @@ public class ShootSystem : MonoBehaviour
 
                             Debug.Log("This hitable object is an enemy");
                         }
-
-
-
-
+                    
                     }
 
                 }
@@ -154,9 +152,6 @@ public class ShootSystem : MonoBehaviour
                             Instantiate(fw, hit.transform.position, Quaternion.identity);
                             Debug.Log("This hitable object is an enemy");
                         }
-
-
-
 
                     }
                 }
@@ -185,7 +180,7 @@ public class ShootSystem : MonoBehaviour
                         if (hit.collider.CompareTag("Enemy"))
                         {
 
-                            Invoke(nameof(Explosion), 0);
+                             Instantiate(earth, hit.transform.position, Quaternion.identity);
                             Debug.Log("This hitable object is an enemy");
                         }
 
@@ -202,36 +197,20 @@ public class ShootSystem : MonoBehaviour
             case GameManager.ElementStatus.we:
                 if (canShoot)
                 {
-                    Ice();
+                    canShoot = false;
+                    we.gameObject.SetActive(true);
                 }
                 break;
             case GameManager.ElementStatus.ae:
                 if (canShoot)
                 {
-                    FlyingRock();
+                    Instantiate(ae, shootPoint.transform.position, shootPoint.transform.rotation);
                 }
                 break;
 
 
         }
 
-    }
-
-
-    void Ice()
-    {
-        canShoot = false;
-        we.gameObject.SetActive(true);
-    }
-
-    void FlyingRock()
-    {
-        Instantiate(ae, shootPoint.transform.position, shootPoint.transform.rotation);
-    }
-
-    void Explosion()
-    {
-        Instantiate(earth, hit.transform.position, Quaternion.identity);
     }
 
     public void OnShoot(InputAction.CallbackContext context)

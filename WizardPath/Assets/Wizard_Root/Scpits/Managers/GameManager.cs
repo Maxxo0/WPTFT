@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
         {
             if (instance == null)
             {
+
                 Debug.Log("GameManager is null!");
             }
             return instance;
@@ -25,6 +26,19 @@ public class GameManager : MonoBehaviour
 
     public ElementStatus actualElement = ElementStatus.fire;
 
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
+    }
     // Start is called before the first frame update
     void Start()
     {
