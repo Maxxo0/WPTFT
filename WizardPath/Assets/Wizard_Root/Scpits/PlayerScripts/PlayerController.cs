@@ -11,18 +11,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Movement & Look Stats")]
     [SerializeField] GameObject camHolder;
-    public float speed, sprintSpeed, crouchSpeed, maxForce, sensitivity;
-    bool isSprinting;
-    bool isCrouching;
-
-    [Header("Jumping Stats")]
-    public float jumpForce;
-    [SerializeField] GameObject groundCheck;
-    [SerializeField] bool isGrounded;
-    [SerializeField] float groundDetectRadius = 0.1f;
-    [SerializeField] LayerMask groundLayer;
-
-
+    public float speed, maxForce, sensitivity, normalSpeed, maxSpeed;
     //Valores privados
     Vector2 move;
     Vector2 look;
@@ -33,7 +22,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
         camHolder = GameObject.Find("CameraHolder");
-        groundCheck = GameObject.Find("GroundCheck");
+        
     }
 
     // Start is called before the first frame update
@@ -46,7 +35,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        isGrounded = Physics.CheckSphere(groundCheck.transform.position, groundDetectRadius, groundLayer);
+        
 
     }
 
@@ -67,7 +56,7 @@ public class PlayerController : MonoBehaviour
     {
         Vector3 currentVelocity = rb.velocity;
         Vector3 targetVelocity = new Vector3(move.x, 0, move.y);
-        targetVelocity *= isCrouching ? crouchSpeed : (isSprinting ? sprintSpeed : speed);
+        
 
         //Alinear la dirección con la orientación correcta
         targetVelocity = transform.TransformDirection(targetVelocity);
@@ -92,16 +81,7 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    void Jump()
-    {
-        Vector3 jumpForces = rb.velocity;
-        if (isGrounded)
-        {
-            jumpForces.y = jumpForce;
-        }
-
-        rb.velocity = jumpForces;
-    }
+    
 
     public void OnMove(InputAction.CallbackContext context)
     {
@@ -113,21 +93,8 @@ public class PlayerController : MonoBehaviour
         look = context.ReadValue<Vector2>();
     }
 
-    public void OnJump(InputAction.CallbackContext context)
+    public void SpeedBoost()
     {
-        Jump();
-    }
-
-    public void OnSprint(InputAction.CallbackContext context)
-    {
-        isSprinting = context.ReadValueAsButton();
-    }
-
-    public void OnCrouch(InputAction.CallbackContext context)
-    {
-
-        isCrouching = context.ReadValueAsButton();
-        anim.SetBool("isCrouching", isCrouching);
-
+        speed = maxSpeed;
     }
 }
