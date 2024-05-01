@@ -123,139 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &678372842
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: f5e4d36e0f42100408d643ac737b9d70,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f5e4d36e0f42100408d643ac737b9d70,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f5e4d36e0f42100408d643ac737b9d70,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f5e4d36e0f42100408d643ac737b9d70,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f5e4d36e0f42100408d643ac737b9d70,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f5e4d36e0f42100408d643ac737b9d70,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f5e4d36e0f42100408d643ac737b9d70,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f5e4d36e0f42100408d643ac737b9d70,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f5e4d36e0f42100408d643ac737b9d70,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f5e4d36e0f42100408d643ac737b9d70,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: f5e4d36e0f42100408d643ac737b9d70,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8229075249343183334, guid: f5e4d36e0f42100408d643ac737b9d70,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 0de25c185a5adb04ebec340b528fb17d, type: 2}
-    - target: {fileID: -6072555553332271765, guid: f5e4d36e0f42100408d643ac737b9d70,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 4f126f011957eb44c80e04a2c5e51755, type: 2}
-    - target: {fileID: -5295568087745518319, guid: f5e4d36e0f42100408d643ac737b9d70,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: acd80a27fa47c794fbb735c4ab5c846b, type: 2}
-    - target: {fileID: -4826560846836746779, guid: f5e4d36e0f42100408d643ac737b9d70,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 0de25c185a5adb04ebec340b528fb17d, type: 2}
-    - target: {fileID: -4024481593179912365, guid: f5e4d36e0f42100408d643ac737b9d70,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 8351f764df56d614abb478a73c60b416, type: 2}
-    - target: {fileID: 753025211326951044, guid: f5e4d36e0f42100408d643ac737b9d70,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 8351f764df56d614abb478a73c60b416, type: 2}
-    - target: {fileID: 919132149155446097, guid: f5e4d36e0f42100408d643ac737b9d70,
-        type: 3}
-      propertyPath: m_Name
-      value: Mano Proyecto FPS Controller
-      objectReference: {fileID: 0}
-    - target: {fileID: 2579609087585066847, guid: f5e4d36e0f42100408d643ac737b9d70,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 0de25c185a5adb04ebec340b528fb17d, type: 2}
-    - target: {fileID: 2659568144545464917, guid: f5e4d36e0f42100408d643ac737b9d70,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 8351f764df56d614abb478a73c60b416, type: 2}
-    - target: {fileID: 5081587446760277702, guid: f5e4d36e0f42100408d643ac737b9d70,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 0de25c185a5adb04ebec340b528fb17d, type: 2}
-    - target: {fileID: 7065175131675297003, guid: f5e4d36e0f42100408d643ac737b9d70,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 0de25c185a5adb04ebec340b528fb17d, type: 2}
-    - target: {fileID: 7523159019191095760, guid: f5e4d36e0f42100408d643ac737b9d70,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 8351f764df56d614abb478a73c60b416, type: 2}
-    - target: {fileID: 9146571630009987416, guid: f5e4d36e0f42100408d643ac737b9d70,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 8351f764df56d614abb478a73c60b416, type: 2}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f5e4d36e0f42100408d643ac737b9d70, type: 3}
 --- !u!1 &1194014370
 GameObject:
   m_ObjectHideFlags: 0
@@ -466,3 +333,76 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &7089253293497702109
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5007110334949194893, guid: 9420c639a134ccf4fab046fc8e30ae76,
+        type: 3}
+      propertyPath: m_Name
+      value: Mano Proyecto FPS Controller
+      objectReference: {fileID: 0}
+    - target: {fileID: 5635978950789637687, guid: 9420c639a134ccf4fab046fc8e30ae76,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5635978950789637687, guid: 9420c639a134ccf4fab046fc8e30ae76,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5635978950789637687, guid: 9420c639a134ccf4fab046fc8e30ae76,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5635978950789637687, guid: 9420c639a134ccf4fab046fc8e30ae76,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5635978950789637687, guid: 9420c639a134ccf4fab046fc8e30ae76,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5635978950789637687, guid: 9420c639a134ccf4fab046fc8e30ae76,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5635978950789637687, guid: 9420c639a134ccf4fab046fc8e30ae76,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5635978950789637687, guid: 9420c639a134ccf4fab046fc8e30ae76,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5635978950789637687, guid: 9420c639a134ccf4fab046fc8e30ae76,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5635978950789637687, guid: 9420c639a134ccf4fab046fc8e30ae76,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5635978950789637687, guid: 9420c639a134ccf4fab046fc8e30ae76,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9420c639a134ccf4fab046fc8e30ae76, type: 3}
