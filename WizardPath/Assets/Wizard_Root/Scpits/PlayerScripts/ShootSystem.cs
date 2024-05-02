@@ -14,7 +14,9 @@ public class ShootSystem : MonoBehaviour
     [SerializeField] LayerMask enemyLayer;
     [SerializeField] LayerMask groundLayer;
     GameObject player;
+    [SerializeField] GameObject camHolder;
     
+
 
     [Header("Elements")]
     [SerializeField] GameObject fire;
@@ -28,29 +30,24 @@ public class ShootSystem : MonoBehaviour
     [SerializeField] GameObject we;
     [SerializeField] GameObject ae;
 
-
+    float lookVector;
 
     [Header("Weapon Stats")]
     public int damage;
     public float range;
     public float spread;
-    public float shootingCooldown;
-    public float timeBetweenShoots;
-    public float reloadTime;
-    public bool allowButtonHold;
-    Transform enemyT;
+    public float lowCD;
+    public float strongCD;
+    public float midCD;
+    public float fastSpeed;
+    public float slowSpeed;
     
-
-
-
     [Header("State Bools")]
     [SerializeField] bool shooting;
     [SerializeField] bool canShoot;
-    
 
-    [Header("FeedBack & Graphics")]
-    [SerializeField] GameObject muzzleFlash;
-    [SerializeField] GameObject hitGraphic;
+
+    
 
     #endregion
 
@@ -65,6 +62,7 @@ public class ShootSystem : MonoBehaviour
     void Start()
     {
         player = GetComponent<GameObject>();
+        
     }
 
     // Update is called once per frame
@@ -74,6 +72,10 @@ public class ShootSystem : MonoBehaviour
         {
             ShootSyst();
         }
+
+        lookVector = camHolder.gameObject.transform.rotation.x;
+
+        
         
     }
     void ShootSyst()
@@ -87,20 +89,25 @@ public class ShootSystem : MonoBehaviour
                 {
                     canShoot = false;
                     fire.gameObject.SetActive(true);
+                    Invoke(nameof(ResetShoot), strongCD);
                 }
                 break;
             case GameManager.ElementStatus.water:
                 if (canShoot)
                 {
                     canShoot = false;
-                    Instantiate(water, shootPoint.transform.position, shootPoint.transform.rotation);
+                    Rigidbody rb = Instantiate(water, shootPoint.transform.position, Quaternion.identity).GetComponent<Rigidbody>();
+                    rb.AddForce(transform.forward * slowSpeed, ForceMode.Impulse);
+                    Invoke(nameof(ResetShoot), strongCD);
                 }
                 break;
             case GameManager.ElementStatus.air:
                 if (canShoot)
                 {
                     canShoot = false;
-                    Instantiate(air, shootPoint.transform.position, shootPoint.transform.rotation);
+                    Rigidbody rb = Instantiate(air, shootPoint.transform.position, Quaternion.identity).GetComponent<Rigidbody>();
+                    rb.AddForce(transform.forward * fastSpeed, ForceMode.Impulse);
+                    Invoke(nameof(ResetShoot), lowCD);
                 }
                 break;
             case GameManager.ElementStatus.earth:
@@ -125,8 +132,9 @@ public class ShootSystem : MonoBehaviour
                             Instantiate(earth, hit.transform.position, Quaternion.identity);
 
                             Debug.Log("This hitable object is an enemy");
+                            Invoke(nameof(ResetShoot), strongCD);
                         }
-                    
+
                     }
 
                 }
@@ -139,18 +147,19 @@ public class ShootSystem : MonoBehaviour
                     float spreadZ = Random.Range(-spread, spread);
                     Vector3 direction = fpsCam.transform.forward + new Vector3(spreadX, spreadY, spreadZ);
 
-                    if (Physics.Raycast(fpsCam.transform.position, direction, out hit, range, groundLayer))
+                    if (Physics.Raycast(fpsCam.transform.position, direction, out hit, range, enemyLayer))
                     {
                         Debug.DrawRay(fpsCam.transform.position, direction, Color.red);
                         Debug.Log(hit.collider.name);
 
 
-                        if (hit.collider.CompareTag("Ground"))
+                        if (hit.collider.CompareTag("Enemy"))
                         {
 
                             canShoot = false;
                             Instantiate(fw, hit.transform.position, Quaternion.identity);
                             Debug.Log("This hitable object is an enemy");
+                            Invoke(nameof(ResetShoot), strongCD);
                         }
 
                     }
@@ -160,7 +169,9 @@ public class ShootSystem : MonoBehaviour
                 if (canShoot)
                 {
                     canShoot = false;
-                    Instantiate(fe, shootPoint.transform.position, shootPoint.transform.rotation);
+                    Rigidbody rb = Instantiate(fa, shootPoint.transform.position, Quaternion.identity).GetComponent<Rigidbody>();
+                    rb.AddForce(transform.forward * slowSpeed, ForceMode.Impulse);
+                    Invoke(nameof(ResetShoot), strongCD);
                 }
                 break;
             case GameManager.ElementStatus.fe:
@@ -180,8 +191,9 @@ public class ShootSystem : MonoBehaviour
                         if (hit.collider.CompareTag("Enemy"))
                         {
 
-                             Instantiate(earth, hit.transform.position, Quaternion.identity);
+                            Instantiate(earth, hit.transform.position, Quaternion.identity);
                             Debug.Log("This hitable object is an enemy");
+                            Invoke(nameof(ResetShoot), midCD);
                         }
 
                     }
@@ -190,8 +202,10 @@ public class ShootSystem : MonoBehaviour
             case GameManager.ElementStatus.wa:
                 if (canShoot)
                 {
+                    canShoot = false;
                     PlayerController playerController = gameObject.GetComponent<PlayerController>();
                     playerController.SpeedBoost();
+                    Invoke(nameof(ResetShoot), midCD);
                 }
                 break;
             case GameManager.ElementStatus.we:
@@ -199,12 +213,15 @@ public class ShootSystem : MonoBehaviour
                 {
                     canShoot = false;
                     we.gameObject.SetActive(true);
+                    Invoke(nameof(ResetShoot), strongCD);
                 }
                 break;
             case GameManager.ElementStatus.ae:
                 if (canShoot)
                 {
-                    Instantiate(ae, shootPoint.transform.position, shootPoint.transform.rotation);
+                    canShoot = false;
+                    Instantiate(ae, shootPoint.transform.position, Quaternion.identity);
+                    Invoke(nameof(ResetShoot), midCD);
                 }
                 break;
 
@@ -212,6 +229,15 @@ public class ShootSystem : MonoBehaviour
         }
 
     }
+
+
+
+    void ResetShoot()
+    {
+        canShoot = true;
+    }
+
+
 
     public void OnShoot(InputAction.CallbackContext context)
     {

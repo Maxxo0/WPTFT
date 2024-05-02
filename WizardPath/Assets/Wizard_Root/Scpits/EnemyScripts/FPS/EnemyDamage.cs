@@ -10,8 +10,6 @@ public class EnemyDamage : MonoBehaviour
     [SerializeField] float maxHealth;
 
     [Header("Feedback System")]
-    [SerializeField] Material original;
-    [SerializeField] Material damaged;
     [SerializeField] float feedbackTime;
     GameObject model; // Ref al objeto que contiene el mesh del personaje (solo en caso de que el mesh vaya aparte del código)
     MeshRenderer modelRend; // Ref al meshRenderer del objeto con modelado (permite acceder a su material)
@@ -21,7 +19,7 @@ public class EnemyDamage : MonoBehaviour
     {
         model = GameObject.Find("EnemyBody");
         modelRend = model.GetComponent<MeshRenderer>();
-        original = modelRend.material;
+        
         health = maxHealth;
     }
 
@@ -39,13 +37,9 @@ public class EnemyDamage : MonoBehaviour
     public void TakeDamage(int damageToTake)
     {
         // Aquí cabe codear cualquier efecto de recibir daño que se desee
-        modelRend.material = damaged;
+
         health -= damageToTake;
-        Invoke(nameof(ResetMaterial), feedbackTime);
     }
 
-    void ResetMaterial()
-    {
-        modelRend.material = original;
-    }
+    
 }

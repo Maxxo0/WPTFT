@@ -8,19 +8,24 @@ public class PlayerController : MonoBehaviour
     //Referencias privadas
     Rigidbody rb;
     Animator anim;
+    PlayerInput input;
 
     [Header("Movement & Look Stats")]
     [SerializeField] GameObject camHolder;
+    
     public float speed, maxForce, sensitivity, normalSpeed, maxSpeed;
     //Valores privados
     Vector2 move;
-    Vector2 look;
+    public Vector2 look;
     float lookRotation;
+    Vector2 hor;
+    
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
+        input = GetComponent<PlayerInput>();
         camHolder = GameObject.Find("CameraHolder");
         
     }
@@ -28,14 +33,14 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        
         Cursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
 
     }
 
@@ -74,6 +79,7 @@ public class PlayerController : MonoBehaviour
     {
         //Girar
         transform.Rotate(Vector3.up * look.x * sensitivity);
+        
         //Mirar
         lookRotation += (-look.y * sensitivity);
         lookRotation = Mathf.Clamp(lookRotation, -90, 90);
@@ -91,10 +97,19 @@ public class PlayerController : MonoBehaviour
     public void OnLook(InputAction.CallbackContext context)
     {
         look = context.ReadValue<Vector2>();
+        
+
     }
 
     public void SpeedBoost()
     {
         speed = maxSpeed;
+        float buffTime = 2f;
+        Invoke(nameof(ResetSpeed), buffTime);
+    }
+
+    void ResetSpeed()
+    {
+        speed = normalSpeed;
     }
 }
