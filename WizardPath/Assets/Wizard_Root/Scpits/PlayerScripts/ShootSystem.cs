@@ -96,7 +96,7 @@ public class ShootSystem : MonoBehaviour
                 if (canShoot)
                 {
                     canShoot = false;
-                    Rigidbody rb = Instantiate(water, shootPoint.transform.position, Quaternion.identity).GetComponent<Rigidbody>();
+                    Rigidbody rb = Instantiate(water, shootPoint.transform.position, shootPoint.transform.rotation).GetComponent<Rigidbody>();
                     rb.AddForce(transform.forward * slowSpeed, ForceMode.Impulse);
                     Invoke(nameof(ResetShoot), strongCD);
                 }
