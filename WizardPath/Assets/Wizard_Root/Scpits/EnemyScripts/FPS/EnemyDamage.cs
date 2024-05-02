@@ -11,14 +11,13 @@ public class EnemyDamage : MonoBehaviour
 
     [Header("Feedback System")]
     [SerializeField] float feedbackTime;
-    GameObject model; // Ref al objeto que contiene el mesh del personaje (solo en caso de que el mesh vaya aparte del código)
+    BoxCollider enemyCol; // Ref al objeto que contiene el mesh del personaje (solo en caso de que el mesh vaya aparte del código)
     MeshRenderer modelRend; // Ref al meshRenderer del objeto con modelado (permite acceder a su material)
 
     // Start is called before the first frame update
     void Start()
     {
-        model = GameObject.Find("EnemyBody");
-        modelRend = model.GetComponent<MeshRenderer>();
+        enemyCol = GetComponent<BoxCollider>();
         
         health = maxHealth;
     }

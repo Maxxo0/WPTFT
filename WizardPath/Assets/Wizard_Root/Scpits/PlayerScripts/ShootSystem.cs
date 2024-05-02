@@ -15,6 +15,7 @@ public class ShootSystem : MonoBehaviour
     [SerializeField] LayerMask groundLayer;
     GameObject player;
     [SerializeField] GameObject camHolder;
+    [SerializeField] GameObject groundShoot;
     
 
 
@@ -96,7 +97,7 @@ public class ShootSystem : MonoBehaviour
                 if (canShoot)
                 {
                     canShoot = false;
-                    Rigidbody rb = Instantiate(water, shootPoint.transform.position, shootPoint.transform.rotation).GetComponent<Rigidbody>();
+                    Rigidbody rb = Instantiate(water, groundShoot.transform.position, groundShoot.transform.rotation).GetComponent<Rigidbody>();
                     rb.AddForce(transform.forward * slowSpeed, ForceMode.Impulse);
                     Invoke(nameof(ResetShoot), strongCD);
                 }
@@ -169,7 +170,7 @@ public class ShootSystem : MonoBehaviour
                 if (canShoot)
                 {
                     canShoot = false;
-                    Rigidbody rb = Instantiate(fa, shootPoint.transform.position, Quaternion.identity).GetComponent<Rigidbody>();
+                    Rigidbody rb = Instantiate(fa, groundShoot.transform.position, groundShoot.transform.rotation).GetComponent<Rigidbody>();
                     rb.AddForce(transform.forward * slowSpeed, ForceMode.Impulse);
                     Invoke(nameof(ResetShoot), strongCD);
                 }

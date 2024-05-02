@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7992944627727158657}
   - component: {fileID: 213127524542984513}
   - component: {fileID: 6646113891401650945}
+  - component: {fileID: 8741313458683063042}
   - component: {fileID: 4829157463495282914}
   m_Layer: 0
   m_Name: BodyT
@@ -134,6 +135,21 @@ MonoBehaviour:
   shootSpeedY: 0
   attackRange: 10
   targetInAttackRange: 0
+--- !u!114 &8741313458683063042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2787710029108433104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8363f9d55917b21468ebae3bbbb2d341, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  maxHealth: 100
+  feedbackTime: 0
 --- !u!195 &4829157463495282914
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -291,7 +307,7 @@ Transform:
   m_Children:
   - {fileID: 6949526273943749449}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8422382181049557557
 GameObject:

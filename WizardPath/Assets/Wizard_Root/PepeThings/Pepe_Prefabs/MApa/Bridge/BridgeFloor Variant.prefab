@@ -11,7 +11,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 93dfd25a3d836cf4bb84952c4a08103f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 93dfd25a3d836cf4bb84952c4a08103f,
         type: 3}
@@ -67,6 +67,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BridgeFloor Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 93dfd25a3d836cf4bb84952c4a08103f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 93dfd25a3d836cf4bb84952c4a08103f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

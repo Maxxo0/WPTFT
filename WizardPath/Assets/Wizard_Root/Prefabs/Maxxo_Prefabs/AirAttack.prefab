@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 196701453196073367}
   - component: {fileID: 331207457453360103}
   - component: {fileID: -4804903626791847168}
+  - component: {fileID: 3524718169902351324}
   m_Layer: 0
   m_Name: AirAttack
   m_TagString: Untagged
@@ -167,3 +168,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &3524718169902351324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2771796402297016094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff4f3fcad64a9c74eb73b1a1ac86457b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 20
