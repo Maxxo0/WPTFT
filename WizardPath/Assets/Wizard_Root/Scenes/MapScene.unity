@@ -2587,6 +2587,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1710589944268639177, guid: 12bf131067abb764f8a9a6f10ee857e6,
         type: 3}
+      propertyPath: m_DefaultControlScheme
+      value: Keyboard&Mouse
+      objectReference: {fileID: 0}
+    - target: {fileID: 1710589944268639177, guid: 12bf131067abb764f8a9a6f10ee857e6,
+        type: 3}
       propertyPath: m_ActionEvents.Array.data[13].m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}

@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
 
     bool oneTime;
 
-    [SerializeField] GameObject opt;
+    
 
     private void Awake()
     {
@@ -87,19 +87,6 @@ public class GameManager : MonoBehaviour
         if (context.started) { actualAttack--; }
     }
 
-    public void Options()
-    {
-        opt.gameObject.SetActive(true);
-    }
-
-    public void Close()
-    {
-        opt.gameObject.SetActive(false);
-    }
-
-    public void StartGame()
-    {
-        SceneManager.LoadScene(1);
-    }
+   
 
 }

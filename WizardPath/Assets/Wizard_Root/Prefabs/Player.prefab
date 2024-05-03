@@ -487,7 +487,7 @@ MonoBehaviour:
     m_ActionId: 99e65bbc-3977-4649-a047-4244aaa3ebd5
     m_ActionName: Player/PrevAttack[/Keyboard/q,/XInputControllerWindows/leftShoulder]
   m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
+  m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
@@ -552,6 +552,7 @@ MonoBehaviour:
   normalSpeed: 10
   maxSpeed: 20
   look: {x: 0, y: 0}
+  win: {fileID: 0}
 --- !u!1001 &6936542322297929904
 PrefabInstance:
   m_ObjectHideFlags: 0
