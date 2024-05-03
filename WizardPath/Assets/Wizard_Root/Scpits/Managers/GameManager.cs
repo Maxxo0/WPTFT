@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
 
     bool oneTime;
 
-    
+   
 
     private void Awake()
     {
