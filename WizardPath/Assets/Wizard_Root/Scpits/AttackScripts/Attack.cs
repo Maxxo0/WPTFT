@@ -7,6 +7,7 @@ public class Attack : MonoBehaviour
     // Start is called before the first frame update
 
     public int damage;
+    public bool isntGrounded;
 
     void Start()
     {
@@ -25,11 +26,20 @@ public class Attack : MonoBehaviour
         {
             EnemyDamage enemyDamage = collision.gameObject.GetComponent<EnemyDamage>();
             enemyDamage.TakeDamage(damage);
+
+            if (isntGrounded)
+            {
+                Die();
+            }
         }
 
         if (collision.gameObject.CompareTag("Ground"))
         {
-            Die();
+            if (isntGrounded)
+            {
+                Die();
+            }
+            
         }
     }
 
@@ -39,11 +49,19 @@ public class Attack : MonoBehaviour
         {
             EnemyDamage enemyDamage = other.gameObject.GetComponent<EnemyDamage>();
             enemyDamage.TakeDamage(damage);
+
+            if (isntGrounded)
+            {
+                Die();
+            }
         }
 
         if (other.gameObject.CompareTag("Ground"))
         {
-            Die();
+            if (isntGrounded)
+            {
+                Die();
+            }
         }
     }
 

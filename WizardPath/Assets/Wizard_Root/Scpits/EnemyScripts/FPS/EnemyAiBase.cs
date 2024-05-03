@@ -23,10 +23,8 @@ public class EnemyAiBase : MonoBehaviour
     bool alreadyAttacked; // Bool para determinar si se ha atacado
 
     // DISPARO FISICO
-    [SerializeField] GameObject projectile; // Ref al prefab del proyectil
-    [SerializeField] Transform shootPoint; // Ref a la posición desde donde se disparan los proyectiles
-    [SerializeField] float shootSpeedZ; // Vel. de disparo hacia delante
-    [SerializeField] float shootSpeedY; // Vel. de disparo hacia arriba (en caso de bolea)
+    [SerializeField] GameObject attack; // Ref al prefab del proyectil
+    
 
 
     [Header("States & Detection")]
@@ -111,7 +109,7 @@ public class EnemyAiBase : MonoBehaviour
         {
 
             // Si no hemos atacado ya, atacamos
-            GenetateProjectile();
+            attack.gameObject.SetActive(true);
             Debug.Log("Enemigo atacando");
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks); // Resetea el ataque con un intervalo
@@ -124,12 +122,7 @@ public class EnemyAiBase : MonoBehaviour
         alreadyAttacked = false;
     }
  
-    void GenetateProjectile()
-    {
-        Rigidbody rb = Instantiate(projectile, shootPoint.position, Quaternion.identity).GetComponent<Rigidbody>();
-        rb.AddForce(transform.forward * shootSpeedZ, ForceMode.Impulse);
-        // rb.AddForce(transform.up * shootSpeedY, ForceMode.Impulse);
-    }
+    
 
     private void OnDrawGizmosSelected()
     {

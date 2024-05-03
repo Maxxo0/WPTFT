@@ -5,7 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Wizard_Root/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Wizard_Root/Scenes/AlejopScene.unity
+    guid: 5572ac82949723841bffb760a88d2f1b
+  - enabled: 1
+    path: Assets/Wizard_Root/Scenes/MapScene.unity
+    guid: 915881b3f050daa498593f8e0d1144e9
   m_configObjects: {}

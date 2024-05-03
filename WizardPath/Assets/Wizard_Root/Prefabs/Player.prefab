@@ -546,11 +546,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camHolder: {fileID: 76795885727377996}
-  speed: 5
+  speed: 10
   maxForce: 1
   sensitivity: 0.1
-  normalSpeed: 5
-  maxSpeed: 10
+  normalSpeed: 10
+  maxSpeed: 20
   look: {x: 0, y: 0}
 --- !u!1001 &6936542322297929904
 PrefabInstance:

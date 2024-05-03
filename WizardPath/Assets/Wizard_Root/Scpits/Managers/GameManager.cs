@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -29,6 +30,8 @@ public class GameManager : MonoBehaviour
     int actualAttack;
 
     bool oneTime;
+
+    [SerializeField] GameObject opt;
 
     private void Awake()
     {
@@ -82,6 +85,21 @@ public class GameManager : MonoBehaviour
     public void PrevAttack(InputAction.CallbackContext context) 
     {
         if (context.started) { actualAttack--; }
+    }
+
+    public void Options()
+    {
+        opt.gameObject.SetActive(true);
+    }
+
+    public void Close()
+    {
+        opt.gameObject.SetActive(false);
+    }
+
+    public void StartGame()
+    {
+        SceneManager.LoadScene(1);
     }
 
 }

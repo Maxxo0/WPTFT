@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -19,6 +20,8 @@ public class PlayerController : MonoBehaviour
     public Vector2 look;
     float lookRotation;
     Vector2 hor;
+
+    [SerializeField] GameObject win;
     
 
     private void Awake()
@@ -60,7 +63,7 @@ public class PlayerController : MonoBehaviour
     void Movement()
     {
         Vector3 currentVelocity = rb.velocity;
-        Vector3 targetVelocity = new Vector3(move.x, 0, move.y);
+        Vector3 targetVelocity = new Vector3(move.x * speed, 0, move.y * speed);
         
 
         //Alinear la dirección con la orientación correcta
@@ -111,5 +114,19 @@ public class PlayerController : MonoBehaviour
     void ResetSpeed()
     {
         speed = normalSpeed;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("EnemyAttack"))
+        {
+            SceneManager.LoadScene(1);
+        }
+
+        if (other.gameObject.CompareTag("Win"))
+        {
+            win.gameObject.SetActive(true);
+            Time.timeScale = 0f;
+        }
     }
 }
